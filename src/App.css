@@ -1,0 +1,73 @@
+.App-intro {
+  font-size: large;
+}
+
+.content {
+  margin-top: 3em;
+}
+
+.sign-in-outline {
+  position: relative;
+  padding: 3em 1em 1em;
+  border: 1px solid #d8d8d8;
+  margin: 1.5rem 0 0
+}
+
+.sign-in-header {
+  text-align: center;;
+}
+
+.sign-in-form-redirect {
+  text-align: center;
+  padding-top: 1em;
+}
+
+.list-group-item-header {
+  flex: 0 0 100%;
+}
+
+.my-group-item:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.my-group-item {
+  color: black;
+}
+
+.my-groups-link:hover {
+  text-decoration: none;
+}
+
+.my-groups-header {
+  margin-bottom: 1em;
+}
+
+.group-header {
+  height: 5em;
+}
+
+.group-body-header {
+  background: #eee;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+.group-body-component {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  min-height: 5em;
+}
+
+.member-avatar {
+  height: 75px;
+  width: 75px;
+}
+
+.game-group {
+  margin-bottom: 1em;
+}
+
+/** {
+  border: solid red 1px;
+}*/
