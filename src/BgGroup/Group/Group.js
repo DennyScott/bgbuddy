@@ -14,99 +14,93 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
+import AboutUs from '../Components/AboutUs';
+
 export default class Group extends Component {
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            activeTab: '1'
-        };
-    }
-
-    toggle(tab) {
-        if (this.state.activeTab !== tab) {
-            this.setState({activeTab: tab});
-        }
-    }
 
     render() {
         return (
             <div className="group">
                 <div className="group-header row">
-                    <div className="row group-title col col-xs-12">
-                        IQ Metrix
+                    <div className="group-title col col-xs-12">
+                        <img className="group-image" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                        <span className="group-title-text">
+                            IQ Metrix Boardgame Night</span>
                     </div>
                 </div>
 
                 <div className="group-body row">
-                    <div className="group-body-left col col-md-8">
+                    <div className="group-body-left col col-md-8 col-sm-12">
 
-                        <div className="next-event group-body-component">
-                            Next Event
-                        </div>
+                        <AboutUs>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat.
+                        </AboutUs>
 
                         <div className="chat group-body-component">
-                          <div>
-                            <Nav tabs>
-                                <NavItem>
-                                    <NavLink className={classnames({
-                                        active: this.state.activeTab === '1'
-                                    })} onClick={() => {
-                                        this.toggle('1');
-                                    }}>
-                                        Game Nights
-                                    </NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink className={classnames({
-                                        active: this.state.activeTab === '2'
-                                    })} onClick={() => {
-                                        this.toggle('2');
-                                    }}>
-                                        People
-                                    </NavLink>
-                                </NavItem>
-                            </Nav>
-                        </div>
-
-                        <div className="group-data">
-                            <TabContent activeTab={this.state.activeTab}>
-                                <TabPane tabId="1">
-                                    <Row>
-                                        <Col sm="12">
-                                            <h4>Tab 1 Contents</h4>
-                                        </Col>
-                                    </Row>
-                                </TabPane>
-                                <TabPane tabId="2">
-                                    <Row>
-                                        <Col sm="6">
-                                            <Card block>
-                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                <Button>Go somewhere</Button>
-                                            </Card>
-                                        </Col>
-                                        <Col sm="6">
-                                            <Card block>
-                                                <CardTitle>Special Title Treatment</CardTitle>
-                                                <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                                <Button>Go somewhere</Button>
-                                            </Card>
-                                        </Col>
-                                    </Row>
-                                </TabPane>
-                            </TabContent>
+                          <div className="group-body-header">
+                            Events
+                          </div>
+                            <div className="group-data">
+                                <Row>
+                                    <Col sm="12">
+                                        <Card block className="event-card">
+                                          <div className="card-date">January 3, 2017</div>
+                                            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                            <Button>See Event</Button>
+                                        </Card>
+                                    </Col>
+                                    <Col sm="12">
+                                        <Card block className="event-card">
+                                          <div className="card-date">January 5, 2017</div>
+                                            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                            <Button>See Event</Button>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </div>
                         </div>
                     </div>
-                  </div>
-                    <div className="group-body-right col col-md-4">
+                    <div className="group-body-right col col-md-4 col-sm-12">
                         <div className="members group-body-component">
                             <div className="group-body-header">
                                 Members (10)
                             </div>
-                            <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                            <div className="group-component-body member-avatars">
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
+                            </div>
+                        </div>
+
+                        <div className="next-event group-body-component">
+                            <div className="group-body-header">
+                                Next Event (2 days)
+                            </div>
+                                <Card block className="event-card">
+                                  <div className="card-date">January 3, 2017</div>
+                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+                                    <Button>See Event</Button>
+                                </Card>
+                        </div>
+
+                        <div className="next-event group-body-component">
+                            <div className="group-body-header">
+                                Open Voting (2)
+                            </div>
+                                <Card block className="event-card">
+                                  <div className="card-date">January 3, 2017</div>
+                                    <CardText>Voting open for Board Games</CardText>
+                                    <Button>See Event</Button>
+                                </Card>
+
+                                <Card block className="event-card">
+                                  <div className="card-date">January 8 - 13, 2017</div>
+                                    <CardText>Voting open for Day Availablity</CardText>
+                                    <Button>See Event</Button>
+                                </Card>
                         </div>
                     </div>
                 </div>
