@@ -14,77 +14,97 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
-import AboutUs from '../Components/AboutUs';
+import AboutUs from '../Widgets/AboutUs/AboutUs';
+import Members from '../Widgets/Members/Members';
+import Header from '../BGLayout/Header/Header';
+import Events from '../Widgets/Events/Events';
+import NextEvent from '../Widgets/NextEvent/NextEvent';
+
+
 
 export default class Group extends Component {
+
+  data = {
+    aboutUs: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat",
+    groupName: "IQ Metrix Boardgame Night",
+    groupImage: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+    events: [
+      {
+        date: "January 3, 2017",
+        content: "With supporting text below as a natural lead-in to additional content.",
+        key: 1,
+      },
+      {
+        date: "January 5, 2017",
+        content: "With supporting text below as a natural lead-in to additional content.",
+        key: 2,
+      }
+    ],
+    nextEvent: {
+      date: "January 3, 2017",
+      content: "With supporting text below as a natural lead-in to additional content.",
+      daysUntill: "2",
+    },
+    members: [
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 0,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 1,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 2,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 3,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 4,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 5,
+      },
+      {
+        name: "Denny Scott",
+        image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+        key: 6,
+      },
+    ]
+  };
 
     render() {
         return (
             <div className="group">
                 <div className="group-header row">
-                    <div className="group-title col col-xs-12">
-                        <img className="group-image" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                        <span className="group-title-text">
-                            IQ Metrix Boardgame Night</span>
-                    </div>
+                  <Header image={this.data.groupImage} title={this.data.groupName} />
                 </div>
 
                 <div className="group-body row">
                     <div className="group-body-left col col-md-8 col-sm-12">
 
                         <AboutUs>
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat.
+                          {this.data.aboutUs}
                         </AboutUs>
 
-                        <div className="chat group-body-component">
-                          <div className="group-body-header">
-                            Events
-                          </div>
-                            <div className="group-data">
-                                <Row>
-                                    <Col sm="12">
-                                        <Card block className="event-card">
-                                          <div className="card-date">January 3, 2017</div>
-                                            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                            <Button>See Event</Button>
-                                        </Card>
-                                    </Col>
-                                    <Col sm="12">
-                                        <Card block className="event-card">
-                                          <div className="card-date">January 5, 2017</div>
-                                            <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                            <Button>See Event</Button>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            </div>
-                        </div>
+                        <Events events={this.data.events}/>
                     </div>
                     <div className="group-body-right col col-md-4 col-sm-12">
-                        <div className="members group-body-component">
-                            <div className="group-body-header">
-                                Members (10)
-                            </div>
-                            <div className="group-component-body member-avatars">
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                                <img className="member-avatar img-thumbnail" src="http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"></img>
-                            </div>
-                        </div>
 
-                        <div className="next-event group-body-component">
-                            <div className="group-body-header">
-                                Next Event (2 days)
-                            </div>
-                                <Card block className="event-card">
-                                  <div className="card-date">January 3, 2017</div>
-                                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                                    <Button>See Event</Button>
-                                </Card>
-                        </div>
+                        <Members members={ this.data.members } />
+
+                        <NextEvent event={this.data.nextEvent} />
 
                         <div className="next-event group-body-component">
                             <div className="group-body-header">

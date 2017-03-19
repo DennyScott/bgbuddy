@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Widget, WidgetTitle, WidgetBody } from '../Widget/Widget';
+import { Widget, WidgetTitle, WidgetBody } from '../../Widget/Widget';
 
 export default class AboutUs extends Component {
   render() {

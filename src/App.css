@@ -43,38 +43,9 @@
   margin-bottom: 1em;
 }
 
-.group-data {
-  margin-top: 1em;
-}
-
 .group-header {
   height: 6em;
   border-bottom: 1px solid #eee;
-}
-
-.group-body-header {
-  background: #eee;
-  padding: 0.5em;
-  margin-bottom: 1em;
-}
-
-.group-body-component {
-  margin-top: 1em;
-  margin-bottom: 1em;
-  min-height: 5em;
-}
-
-.member-avatars {
-  display: flex;
-  justify-content: flex-start;
-  margin: 0 -0.2em;
-  flex-wrap: wrap;
-}
-
-.member-avatar.img-thumbnail {
-  height: 65px;
-  width: 65px;
-  margin-left: 0.2em;
 }
 
 .game-group {

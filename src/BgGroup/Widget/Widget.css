@@ -1,0 +1,11 @@
+.widget {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  min-height: 5em;
+}
+
+.widget .widget-header {
+  background: #eee;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
