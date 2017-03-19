@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardText, Button } from 'reactstrap';
+import './EventCard.css';
 
 export default class EventCard extends Component {
   static propTypes = {

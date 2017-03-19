@@ -19,7 +19,7 @@ import Members from '../Widgets/Members/Members';
 import Header from '../BGLayout/Header/Header';
 import Events from '../Widgets/Events/Events';
 import NextEvent from '../Widgets/NextEvent/NextEvent';
-
+import OpenVoting from '../Widgets/OpenVoting/OpenVoting';
 
 
 export default class Group extends Component {
@@ -45,6 +45,19 @@ export default class Group extends Component {
       content: "With supporting text below as a natural lead-in to additional content.",
       daysUntill: "2",
     },
+    openVoting: [
+      {
+        date: "January 3, 2017",
+        content: "Voting open for Board Games",
+        key: 1,
+      },
+      {
+        date: "January 8 - 13, 2017",
+        content: "Voting open for Day Availability",
+        key: 2,
+      },
+
+    ],
     members: [
       {
         name: "Denny Scott",
@@ -94,9 +107,7 @@ export default class Group extends Component {
                 <div className="group-body row">
                     <div className="group-body-left col col-md-8 col-sm-12">
 
-                        <AboutUs>
-                          {this.data.aboutUs}
-                        </AboutUs>
+                        <AboutUs info={this.data.aboutUs} />
 
                         <Events events={this.data.events}/>
                     </div>
@@ -106,22 +117,8 @@ export default class Group extends Component {
 
                         <NextEvent event={this.data.nextEvent} />
 
-                        <div className="next-event group-body-component">
-                            <div className="group-body-header">
-                                Open Voting (2)
-                            </div>
-                                <Card block className="event-card">
-                                  <div className="card-date">January 3, 2017</div>
-                                    <CardText>Voting open for Board Games</CardText>
-                                    <Button>See Event</Button>
-                                </Card>
+                        <OpenVoting events={this.data.openVoting} />
 
-                                <Card block className="event-card">
-                                  <div className="card-date">January 8 - 13, 2017</div>
-                                    <CardText>Voting open for Day Availablity</CardText>
-                                    <Button>See Event</Button>
-                                </Card>
-                        </div>
                     </div>
                 </div>
             </div>
