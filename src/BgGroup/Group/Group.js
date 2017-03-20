@@ -27,8 +27,8 @@ export default class Group extends Component {
   data = {
     aboutUs: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat",
     header: {
-      groupName: "IQ Metrix Boardgame Night",
-      groupImage: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+      title: "IQ Metrix Boardgame Night",
+      image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
     },
     events: [
       {
@@ -103,19 +103,14 @@ export default class Group extends Component {
         return (
             <BGTemplate className="group" header={ this.data.header }>
               <BGLeftBody>
-
-                  <AboutUs info={this.data.aboutUs} />
-
-                  <Events events={this.data.events}/>
+                  <AboutUs info={ this.data.aboutUs } />
+                  <Events events={ this.data.events }/>
               </BGLeftBody>
+
               <BGRightBody>
-
                   <Members members={ this.data.members } />
-
-                  <NextEvent event={this.data.nextEvent} />
-
-                  <OpenVoting events={this.data.openVoting} />
-
+                  <NextEvent event={ this.data.nextEvent } />
+                  <OpenVoting events={ this.data.openVoting } />
               </BGRightBody>
             </BGTemplate>
         );

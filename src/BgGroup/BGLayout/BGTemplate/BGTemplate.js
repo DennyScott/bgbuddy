@@ -12,7 +12,7 @@ class BGTemplate extends Component {
     return (
       <div className={`${ this.props.className } BGTemplate`}>
         <div className="group-header row">
-          <Header image={this.props.header.groupImage} title={this.props.header.groupName} />
+          <Header image={this.props.header.image} title={this.props.header.title} />
         </div>
 
         <div className="group-body row">
