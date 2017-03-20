@@ -14,9 +14,9 @@ import {
 } from 'reactstrap';
 import classnames from 'classnames';
 
+import { BGTemplate, BGLeftBody, BGRightBody } from '../BGLayout/BGTemplate/BGTemplate';
 import AboutUs from '../Widgets/AboutUs/AboutUs';
 import Members from '../Widgets/Members/Members';
-import Header from '../BGLayout/Header/Header';
 import Events from '../Widgets/Events/Events';
 import NextEvent from '../Widgets/NextEvent/NextEvent';
 import OpenVoting from '../Widgets/OpenVoting/OpenVoting';
@@ -26,8 +26,10 @@ export default class Group extends Component {
 
   data = {
     aboutUs: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat",
-    groupName: "IQ Metrix Boardgame Night",
-    groupImage: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+    header: {
+      groupName: "IQ Metrix Boardgame Night",
+      groupImage: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
+    },
     events: [
       {
         date: "January 3, 2017",
@@ -99,29 +101,23 @@ export default class Group extends Component {
 
     render() {
         return (
-            <div className="group">
-                <div className="group-header row">
-                  <Header image={this.data.groupImage} title={this.data.groupName} />
-                </div>
+            <BGTemplate className="group" header={ this.data.header }>
+              <BGLeftBody>
 
-                <div className="group-body row">
-                    <div className="group-body-left col col-md-8 col-sm-12">
+                  <AboutUs info={this.data.aboutUs} />
 
-                        <AboutUs info={this.data.aboutUs} />
+                  <Events events={this.data.events}/>
+              </BGLeftBody>
+              <BGRightBody>
 
-                        <Events events={this.data.events}/>
-                    </div>
-                    <div className="group-body-right col col-md-4 col-sm-12">
+                  <Members members={ this.data.members } />
 
-                        <Members members={ this.data.members } />
+                  <NextEvent event={this.data.nextEvent} />
 
-                        <NextEvent event={this.data.nextEvent} />
+                  <OpenVoting events={this.data.openVoting} />
 
-                        <OpenVoting events={this.data.openVoting} />
-
-                    </div>
-                </div>
-            </div>
+              </BGRightBody>
+            </BGTemplate>
         );
     }
 }

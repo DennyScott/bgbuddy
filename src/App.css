@@ -43,17 +43,6 @@
   margin-bottom: 1em;
 }
 
-.group-header {
-  height: 6em;
-  border-bottom: 1px solid #eee;
-}
-
 .game-group {
   margin-bottom: 1em;
-}
-
-.group-image {
-  height: 5em;
-  width: 5em;
-  margin-right: 1em;
 }
