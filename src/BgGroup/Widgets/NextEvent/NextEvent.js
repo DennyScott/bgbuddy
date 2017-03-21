@@ -10,9 +10,7 @@ export default class NextEvent extends Component {
   render() {
     return (
       <Widget className="next-event">
-          <WidgetTitle>
-              Next Event ({this.props.event.daysUntill})
-          </WidgetTitle>
+          <WidgetTitle title={`Next Event (${this.props.event.daysUntill} days)`} />
           <WidgetBody>
             <EventCard date={ this.props.event.date }
               content={ this.props.event.content }/>

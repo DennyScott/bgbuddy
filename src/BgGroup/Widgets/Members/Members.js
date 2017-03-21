@@ -10,7 +10,7 @@ export default class Members extends Component {
   render() {
     return (
       <Widget className="members">
-        <WidgetTitle>Members ({ this.props.members.length })</WidgetTitle>
+        <WidgetTitle title={`Members (${this.props.members.length})`} />
         <WidgetBody className="member-avatars">
           { this.props.members.map((member) => {
             return (

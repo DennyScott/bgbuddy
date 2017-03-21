@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Widget.css';
+import { Button } from 'reactstrap';
 
 class Widget extends Component {
   render() {
@@ -12,10 +13,19 @@ class Widget extends Component {
 }
 
 class WidgetTitle extends Component {
+  static propTypes = {
+    title: React.PropTypes.string.isRequired,
+    button: React.PropTypes.shape({
+      name: React.PropTypes.string,
+      action: React.PropTypes.func,
+      icon: React.PropTypes.string
+    }),
+  };
   render() {
     return (
       <div className={`${this.props.className} widget-header`}>
-        {this.props.children}
+          {this.props.title}
+          {this.props.button? <Button className={`widget-header-button ${this.props.button.icon}`}>{this.props.name}</Button> : null}
       </div>
     );
   }

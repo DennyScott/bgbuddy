@@ -17,7 +17,7 @@ export default class Events extends Component {
   render() {
     return (
       <Widget className="events">
-        <WidgetTitle>Events</WidgetTitle>
+        <WidgetTitle title="Events" / >
           <WidgetBody className="event-data">
               <Row>
               {this.props.events.map((event) => {

@@ -16,16 +16,15 @@ import {
 } from 'reactstrap';
 
 export default class Groups extends Component {
+  data = {
+    icon: "fa fa-plus"
+  };
 
   render() {
     return (
       <Widget className="my-groups">
-        <WidgetTitle>Groups</WidgetTitle>
+        <WidgetTitle title="Groups" button={this.data}/>
         <WidgetBody>
-          <div className="my-groups-header">
-              <Button color="primary" className="col col-md-2 push-md-10" href="/creategroup/">Create Group</Button>
-          </div>
-
           <Row>
               <Col sm="12">
                   <Card block className="game-group">

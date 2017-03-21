@@ -8,4 +8,12 @@
   background: #eee;
   padding: 0.5em;
   margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.3em;
+}
+
+.widget-header > .widget-header-button {
+
 }

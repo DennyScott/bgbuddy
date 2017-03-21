@@ -11,9 +11,7 @@ export default class OpenVoting extends Component {
   render() {
     return (
       <Widget className="open-voting">
-          <WidgetTitle>
-              Open Voting ({this.props.events.length})
-          </WidgetTitle>
+          <WidgetTitle title={`Open Voting (${this.props.events.length})`} />
           <WidgetBody>
           {this.props.events.map((event) => {
             return (

@@ -10,7 +10,7 @@ export default class AboutUs extends Component {
   render() {
     return (
       <Widget>
-        <WidgetTitle>About Us</WidgetTitle>
+        <WidgetTitle title="About Us" />
         <WidgetBody>
           {this.props.info}
         </WidgetBody>
