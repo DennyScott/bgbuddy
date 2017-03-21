@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default class Login extends Component {
   render() {
     return (
-      <div className="sign-in-form col col-md-6 push-md-3">
+      <div className="sign-in-form col col-md-4 push-md-4">
         <div className="sign-in-outline">
           <Form>
           <h3 className="sign-in-header"> Log In </h3>

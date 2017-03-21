@@ -6,6 +6,7 @@ import NextEvent from '../Widgets/NextEvent/NextEvent';
 import OpenVoting from '../Widgets/OpenVoting/OpenVoting';
 import Groups from '../Widgets/Groups/Groups';
 
+
 export default class MyGroups extends Component {
 
     data = {

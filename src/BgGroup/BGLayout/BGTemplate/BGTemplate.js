@@ -10,7 +10,7 @@ class BGTemplate extends Component {
 
   render() {
     return (
-      <div className={`${ this.props.className } BGTemplate`}>
+      <div className={`${ this.props.className } BGTemplate container content`}>
         <div className="group-header row">
           <Header image={this.props.header.image} title={this.props.header.title} />
         </div>

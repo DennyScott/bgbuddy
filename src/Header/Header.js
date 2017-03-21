@@ -20,7 +20,7 @@ export default class Header extends React.Component {
       <div>
         <Navbar color="faded" light toggleable>
           <NavbarToggler right onClick={this.toggle} />
-          <NavbarBrand href="/">BgBuddy</NavbarBrand>
+          <NavbarBrand href="/">BGPal</NavbarBrand>
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
