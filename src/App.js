@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 
 //Components
-import Header from './Header/Header'
+import Navigation from './Navigation/Navigation'
 import LandingPage from './LandingPage/LandingPage';
 import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Navigation />
       <Router>
         <div className="">
           <Route exact path="/" component={LandingPage}/>
