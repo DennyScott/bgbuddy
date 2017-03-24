@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Widget, WidgetBody, WidgetTitle } from '../../Widget/Widget';
+import CreateGroup from './CreateGroup';
 
 import {
     Nav,
@@ -16,8 +17,24 @@ import {
 } from 'reactstrap';
 
 export default class Groups extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false,
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
   data = {
-    icon: "fa fa-plus"
+    icon: "fa fa-plus",
+    action: this.toggle.bind(this),
   };
 
   render() {
@@ -59,6 +76,7 @@ export default class Groups extends Component {
               </Col>
           </Row>
           </WidgetBody>
+          <CreateGroup modal={this.state.modal} toggle={this.toggle}/>
       </Widget>
     );
   }
