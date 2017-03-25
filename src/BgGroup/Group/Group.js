@@ -1,18 +1,4 @@
 import React, {Component} from 'react';
-import {
-    Nav,
-    NavItem,
-    NavLink,
-    TabContent,
-    TabPane,
-    Row,
-    Col,
-    Card,
-    CardTitle,
-    CardText,
-    Button
-} from 'reactstrap';
-import classnames from 'classnames';
 
 import { BGTemplate, BGLeftBody, BGRightBody } from '../BGLayout/BGTemplate/BGTemplate';
 import AboutUs from '../Widgets/AboutUs/AboutUs';

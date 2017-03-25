@@ -15,6 +15,7 @@ export default class Members extends Component {
           { this.props.members.map((member) => {
             return (
               <img className="member-avatar img-thumbnail"
+                   alt="user avatar"
                    key={member.key}
                    src={member.image} />
             );
