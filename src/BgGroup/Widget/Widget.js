@@ -25,7 +25,7 @@ class WidgetTitle extends Component {
     return (
       <div className={`${this.props.className} widget-header`}>
           {this.props.title}
-          {this.props.button? <Button className={`widget-header-button ${this.props.button.icon}`}>{this.props.name}</Button> : null}
+          {this.props.button? <Button className={`widget-header-button ${this.props.button.icon}`} onClick={this.props.button.action}>{this.props.name}</Button> : null}
       </div>
     );
   }

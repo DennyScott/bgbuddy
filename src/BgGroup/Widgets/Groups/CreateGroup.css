@@ -1,0 +1,26 @@
+.new-group-name {
+  padding: .5rem .75rem;
+  display: flex;
+  width: 100%;
+}
+
+.new-group-description {
+  padding: .5rem .75rem;
+  display: flex;
+  width: 100%;
+}
+
+.new-group-added-members {
+  margin-top: 1em;
+}
+
+.member-avatar {
+  width: 4rem;
+  margin-left: 0.5rem;
+  height: 4rem;
+  margin-top: 0.5rem
+}
+
+.new-group-added-members {
+  margin-left: -0.5rem;
+}
