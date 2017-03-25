@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Link} from 'react-router-dom';
 import {BGTemplate, BGLeftBody, BGRightBody} from '../BGLayout/BGTemplate/BGTemplate';
 import NextEvent from '../Widgets/NextEvent/NextEvent';
 import OpenVoting from '../Widgets/OpenVoting/OpenVoting';

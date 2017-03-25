@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Widget, WidgetBody, WidgetTitle } from '../../Widget/Widget';
 
 import {
-    Nav,
-    NavItem,
-    NavLink,
-    TabContent,
-    TabPane,
     Row,
     Col,
     Card,
