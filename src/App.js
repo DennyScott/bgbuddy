@@ -14,6 +14,7 @@ import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
 import MyGroups from './BgGroup/MyGroups/MyGroups';
 import Group from './BgGroup/Group/Group';
+import Meetup from './BgGroup/Meetup/Meetup';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
           <Route path="/login/" component={Login} />
           <Route path="/mygroups/" component={MyGroups} />
           <Route path="/group/:id" component={Group} />
+          <Route path="/meetup/:id" component={Meetup} />
         </div>
       </Router>
       </div>

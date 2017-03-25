@@ -13,7 +13,7 @@ export default class EventCard extends Component {
     <Card block className="event-card">
       <div className="card-date">{this.props.date}</div>
         <CardText>{this.props.content}</CardText>
-        <Button>See Event</Button>
+        <Button href="/meetup/1">See Event</Button>
     </Card>
   );
   }
