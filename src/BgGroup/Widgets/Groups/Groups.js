@@ -3,11 +3,6 @@ import { Widget, WidgetBody, WidgetTitle } from '../../Widget/Widget';
 import CreateGroup from './CreateGroup';
 
 import {
-    Nav,
-    NavItem,
-    NavLink,
-    TabContent,
-    TabPane,
     Row,
     Col,
     Card,
