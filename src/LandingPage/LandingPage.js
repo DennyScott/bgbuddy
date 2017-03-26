@@ -89,13 +89,13 @@ class LandingElement extends Component {
 
   render() {
     return(
-      <div className={this.props.order % 2 == 0 ? "content-section-a" : "content-section-b"}>
+      <div className={this.props.order % 2 === 0 ? "content-section-a" : "content-section-b"}>
 
         <div className="container">
           <div className="row justify-content-between">
 
           {
-            this.props.order % 2 != 0 &&
+            this.props.order % 2 !== 0 &&
             <div className="col-lg-5 col-sm-6">
               <img className="img-responsive" src={ this.props.image } alt="" />
             </div>
@@ -109,7 +109,7 @@ class LandingElement extends Component {
             </div>
 
             {
-              this.props.order % 2 == 0 &&
+              this.props.order % 2 === 0 &&
               <div className="col-lg-5 col-lg-offset-2 col-sm-6">
                 <img className="img-responsive" src={ this.props.image } alt="" />
               </div>

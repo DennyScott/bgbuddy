@@ -12,6 +12,15 @@ import {
 } from 'reactstrap';
 
 export default class Groups extends Component {
+
+  static propTypes = {
+    groups: React.PropTypes.arrayOf(React.PropTypes.shape({
+      title: React.PropTypes.string.isRequired,
+      description: React.PropTypes.string.isRequired,
+      id: React.PropTypes.number.isRequired,
+    })).isRequired,
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -38,37 +47,17 @@ export default class Groups extends Component {
         <WidgetTitle title="Groups" button={this.data}/>
         <WidgetBody>
           <Row>
-              <Col sm="12">
-                  <Card block className="game-group">
-                      <CardTitle>Pizza Hut Game Group</CardTitle>
-                      <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                      <Button href="/group/1">See More</Button>
-                  </Card>
-              </Col>
-              <Col sm="12">
-                  <Card block className="game-group">
-                      <CardTitle>IQ Metrix Super Game Board Bros</CardTitle>
-                      <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                      <Button>See More</Button>
-                  </Card>
-              </Col>
-          </Row>
-
-          <Row>
-              <Col sm="12">
-                  <Card block className="game-group">
-                      <CardTitle>Denny and Travis Game Test Night</CardTitle>
-                      <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                      <Button>See More</Button>
-                  </Card>
-              </Col>
-              <Col sm="12">
-                  <Card block className="game-group">
-                      <CardTitle>Scotts Game Group</CardTitle>
-                      <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                      <Button>See More</Button>
-                  </Card>
-              </Col>
+            {this.props.groups.map((group) => {
+              return(
+                <Col sm="12" key={group.id}>
+                    <Card block className="game-group">
+                        <CardTitle>{group.title}</CardTitle>
+                        <CardText>{group.description}</CardText>
+                        <Button href={`"/group/"${group.id}`}>See More</Button>
+                    </Card>
+                </Col>
+              );
+            })}
           </Row>
           </WidgetBody>
           <CreateGroup modal={this.state.modal} toggle={this.toggle}/>
