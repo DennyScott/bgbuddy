@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { WidgetTitle, WidgetBody, Widget } from '../../Widget/Widget';
 
-export default class ScheduleVote extends Component {
+const ScheduleVote = props => (
+  <Widget>
+    <WidgetTitle title="Vote: Select your day" />
+    <WidgetBody>
+      Select a day
+    </WidgetBody>
+  </Widget>
+);
 
-  render() {
-    return(
-      <Widget>
-        <WidgetTitle title="Vote: Select your day" />
-        <WidgetBody>
-          Select a day
-        </WidgetBody>
-      </Widget>
-    );
-  }
-}
+export default ScheduleVote;
