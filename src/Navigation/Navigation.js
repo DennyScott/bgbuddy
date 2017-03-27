@@ -32,6 +32,9 @@ export default class Navigation extends React.Component {
               <NavItem>
                 <NavLink href="/mygroups/">My Groups</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/games/">Games</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
