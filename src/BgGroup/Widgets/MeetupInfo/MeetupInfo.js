@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { WidgetTitle, WidgetBody, Widget } from '../../Widget/Widget';
 
-export default class MeetupInfo extends Component {
+const MeetupInfo = props => (
+  <Widget>
+  <WidgetTitle title="Meetup info" />
 
-  static propTypes = {
-    info : React.PropTypes.shape({
-      date: React.PropTypes.string.isRequired,
-      time: React.PropTypes.string.isRequired,
-      location: React.PropTypes.string.isRequired,
-      description: React.PropTypes.string.isRequired,
-    }).isRequired
-  };
+  <WidgetBody>
+    <div>Date: { props.info.date }</div>
+    <div>Time: { props.info.time }</div>
+    <div>Location: { props.info.location }</div>
+    <div>Description: { props.info.description }</div>
+  </WidgetBody>
 
-  render() {
-    return (
-      <Widget>
-      <WidgetTitle title="Meetup info" />
+  </Widget>
+);
 
-      <WidgetBody>
-        <div>Date: { this.props.info.date }</div>
-        <div>Time: { this.props.info.time }</div>
-        <div>Location: { this.props.info.location }</div>
-        <div>Description: { this.props.info.description }</div>
-      </WidgetBody>
+MeetupInfo.propTypes = {
+  info : React.PropTypes.shape({
+    date: React.PropTypes.string.isRequired,
+    time: React.PropTypes.string.isRequired,
+    location: React.PropTypes.string.isRequired,
+    description: React.PropTypes.string.isRequired,
+  }).isRequired
+};
 
-      </Widget>
-    );
-  }
-}
+export default MeetupInfo;
