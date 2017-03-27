@@ -12,7 +12,7 @@ import SignUp from './SignUp/SignUp';
 import Login from './Login/Login';
 import MyGroups from './BgGroup/MyGroups/MyGroups';
 import Group from './BgGroup/Group/Group';
-import Games from './Games/Games';
+import Games from './BgGroup/Games/Games';
 import Meetup from './BgGroup/Meetup/Meetup';
 
 class App extends Component {

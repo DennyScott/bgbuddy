@@ -3,6 +3,9 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import xml2js from 'xml2js';
+import { BGTemplate, BGLeftBody, BGRightBody } from '../BGLayout/BGTemplate/BGTemplate';
+import GamesWidget from '../Widgets/Game/GamesWidget';
+
 
 export default class Games extends Component {
 
@@ -19,18 +22,15 @@ export default class Games extends Component {
 
   render() {
     return (
-      <div className="games-div col col-md-4 push-md-4">
-        <ul className="list-inline">
-          <li>
-            <h1>Games</h1>
-          </li>
-          {this.state.myGames.map((game, i) => (
-            <li key={i}>
-              {game.name}
-            </li>
-          ))}
-        </ul>
-      </div>
+          <BGTemplate className="games" header= "Games">
+            <BGLeftBody>
+                <GamesWidget games={ this.state.myGames }/>
+            </BGLeftBody>
+
+            <BGRightBody>
+
+            </BGRightBody>
+          </BGTemplate>
     );
   }
 
@@ -59,19 +59,6 @@ export default class Games extends Component {
 
   getGames() {
     this.parseData('https://www.boardgamegeek.com/xmlapi2/search?query=Splendor&type=boardgame').then(data => console.log(data));
-  }
-
-  displayGames(data) {
-    console.log(data);
-    return (
-      <ul className="list-inline">
-        {data.map(game => {
-          <li>
-            <h1>{game.name[0]._}</h1>
-          </li>
-        })}
-      </ul>
-    )
   }
 
   parseData(url) {
