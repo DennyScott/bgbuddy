@@ -1,27 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Widget, WidgetTitle, WidgetBody } from '../../Widget/Widget';
 import './Members.css';
 
-export default class Members extends Component {
-  static propTypes = {
-    members: React.PropTypes.array.isRequired,
-  };
+const GetMemberTitle = membersCount => (
+  `Members (${ membersCount })`
+)
 
-  render() {
-    return (
-      <Widget className="members">
-        <WidgetTitle title={`Members (${this.props.members.length})`} />
-        <WidgetBody className="member-avatars">
-          { this.props.members.map((member) => {
-            return (
-              <img className="member-avatar img-thumbnail"
-                   alt="user avatar"
-                   key={member.key}
-                   src={member.image} />
-            );
-          }) }
-        </WidgetBody>
-      </Widget>
-    );
-  }
+const DisplayMemberAvatars = members => (
+  members.map( member =>
+    <img className="member-avatar img-thumbnail"
+      alt="user avatar"
+      key={member.key}
+      src={member.image} />
+  )
+)
+
+const Members = props => {
+  const memberTitle = GetMemberTitle(props.members.length);
+  const memberAvatars = DisplayMemberAvatars(props.members);
+
+  return (
+    <Widget className="members">
+      <WidgetTitle title={ memberTitle } />
+      <WidgetBody className="member-avatars">
+        { memberAvatars }
+      </WidgetBody>
+    </Widget>
+  );
 }
+
+Members.propTypes = {
+  members: React.PropTypes.array.isRequired,
+};
+
+export default Members;
