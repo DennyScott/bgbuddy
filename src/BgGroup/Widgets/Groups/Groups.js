@@ -53,7 +53,7 @@ export default class Groups extends Component {
                     <Card block className="game-group">
                         <CardTitle>{group.title}</CardTitle>
                         <CardText>{group.description}</CardText>
-                        <Button href={`"/group/"${group.id}`}>See More</Button>
+                        <Button href={`/group/${group.id}`}>See More</Button>
                     </Card>
                 </Col>
               );

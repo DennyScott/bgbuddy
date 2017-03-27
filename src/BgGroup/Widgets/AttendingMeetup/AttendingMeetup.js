@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { WidgetTitle, WidgetBody, Widget } from '../../Widget/Widget';
+import ImgTextOverlay from '../../Components/ImgTextOverlay';
 
 export default class AttendingMeetup extends Component {
   static propTypes = {
@@ -15,7 +16,13 @@ export default class AttendingMeetup extends Component {
       <Widget>
         <WidgetTitle title="Attending" />
         <WidgetBody>
-          Attending Guests
+          <div className="member-avatars members">
+          { this.props.members.map( (member, i) => {
+            return (
+              <ImgTextOverlay key={i} member={member} />
+            );
+          })}
+        </div>
         </WidgetBody>
       </Widget>
     );
