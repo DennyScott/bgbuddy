@@ -1,3 +1,8 @@
+[![Code Climate](https://codeclimate.com/github/DennyScott/boardgamepal/badges/gpa.svg)](https://codeclimate.com/github/DennyScott/boardgamepal)
+[![Test Coverage](https://codeclimate.com/github/DennyScott/boardgamepal/badges/coverage.svg)](https://codeclimate.com/github/DennyScott/boardgamepal/coverage)
+[![Issue Count](https://codeclimate.com/github/DennyScott/boardgamepal/badges/issue_count.svg)](https://codeclimate.com/github/DennyScott/boardgamepal)
+[![Build Status](https://travis-ci.org/DennyScott/boardgamepal.svg?branch=master)](https://travis-ci.org/DennyScott/boardgamepal)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

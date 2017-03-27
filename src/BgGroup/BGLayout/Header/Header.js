@@ -13,7 +13,7 @@ export default class Header extends Component {
     return (
       <div className="layout-header">
         <div className="group-title col col-xs-12">
-            <img className="group-image" src={this.props.image}></img>
+            <img className="group-image" alt="group" src={this.props.image}></img>
             <span className="group-title-text">{this.props.title}</span>
         </div>
       </div>

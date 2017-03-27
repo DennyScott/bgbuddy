@@ -1,33 +1,26 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import { BGTemplate, BGLeftBody, BGRightBody } from '../BGLayout/BGTemplate/BGTemplate';
-import AboutUs from '../Widgets/AboutUs/AboutUs';
-import Members from '../Widgets/Members/Members';
-import Events from '../Widgets/Events/Events';
+import MeetupInfo from '../Widgets/MeetupInfo/MeetupInfo';
 import NextEvent from '../Widgets/NextEvent/NextEvent';
 import OpenVoting from '../Widgets/OpenVoting/OpenVoting';
+import AttendingMeetup from '../Widgets/AttendingMeetup/AttendingMeetup';
+import ScheduleVote from '../Widgets/Votes/ScheduleVote';
+import GameVote from '../Widgets/Votes/GameVote';
 
-
-export default class Group extends Component {
+export default class Meetup extends Component {
 
   data = {
-    aboutUs: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec diam dolor, porta vitae tristique eu, imperdiet a justo. Cras ultricies, elit in imperdiet dapibus, felis mauris suscipit eros, quis vestibulum enim orci condimentum risus. Aliquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nunc tincidunt magna id tristique suscipit. Aliquam erat volutpat",
-    header: {
-      title: "IQ Metrix Boardgame Night",
+    meetupInfo : {
+      date: "January 3rd, 2017",
+      time: "12:45pm - 4:00pm",
+      location: "Dennys House",
+      description: "We'll be playing a couple of my favourite games, but be sure to bring any others that you would like to see. I'll having some snacks and drinks for all of us. If anyone feels like it, we also order a pizza later on!"
+    },
+    header : {
+      title: "Weekly Thursday Night Meetup",
       image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
     },
-    events: [
-      {
-        date: "January 3, 2017",
-        content: "With supporting text below as a natural lead-in to additional content.",
-        key: 1,
-      },
-      {
-        date: "January 5, 2017",
-        content: "With supporting text below as a natural lead-in to additional content.",
-        key: 2,
-      }
-    ],
     nextEvent: {
       date: "January 3, 2017",
       content: "With supporting text below as a natural lead-in to additional content.",
@@ -50,55 +43,64 @@ export default class Group extends Component {
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 0,
+        attending: "no",
+        id: 0,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 1,
+        attending: "no",
+        id: 1,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 2,
+        attending: "no",
+        id: 2,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 3,
+        attending: "no",
+        id: 3,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 4,
+        attending: "yes",
+        id: 4,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 5,
+        attending: "yes",
+        id: 5,
       },
       {
         name: "Denny Scott",
         image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png",
-        key: 6,
+        attending: "maybe",
+        id: 6,
       },
     ]
   };
 
-    render() {
-        return (
-            <BGTemplate className="group" header={ this.data.header }>
-              <BGLeftBody>
-                  <AboutUs info={ this.data.aboutUs } />
-                  <Events events={ this.data.events }/>
-              </BGLeftBody>
+  render() {
+    return(
+      <BGTemplate className="Meetup" header={this.data.header}>
+        <BGLeftBody>
+          <MeetupInfo info={ this.data.meetupInfo } />
+          <ScheduleVote />
+          <GameVote />
 
-              <BGRightBody>
-                  <Members members={ this.data.members } />
-                  <NextEvent event={ this.data.nextEvent } />
-                  <OpenVoting events={ this.data.openVoting } />
-              </BGRightBody>
-            </BGTemplate>
-        );
-    }
+        </BGLeftBody>
+
+        <BGRightBody>
+          <AttendingMeetup members={ this.data.members } />
+          <NextEvent event={ this.data.nextEvent }/>
+          <OpenVoting events={ this.data.openVoting }/>
+        </BGRightBody>
+      </BGTemplate>
+    );
+  }
 }

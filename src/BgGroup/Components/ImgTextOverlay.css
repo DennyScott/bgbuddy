@@ -1,0 +1,26 @@
+.text-member-overlay {
+  position: relative;
+  margin-left: 0.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.text-member-overlay > .member-avatar.img-thumbnail {
+  margin: 0;
+}
+
+.overlay-text {
+  display: flex;
+  align-items: flex-end;
+  height: 65px;
+  position: absolute;
+  width: 65px;
+  justify-content: flex-end;
+}
+
+.overlay-text .fa-check-circle {
+  color: green;
+}
+
+.overlay-text .fa-times-circle {
+  color: red;
+}

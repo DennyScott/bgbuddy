@@ -1,27 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import EventCard from '../Events/EventCard/EventCard';
 import { Widget, WidgetBody, WidgetTitle } from '../../Widget/Widget';
 
-export default class OpenVoting extends Component {
+const GetsDaysForVoting = daysLeft => (
+  `Open Voting (${daysLeft})`
+)
 
-  static propTypes : {
-      events: React.PropTypes.array.isRequired,
-  };
+const DisplayEventCards = events => (
+  events.map( event =>
+    <EventCard date={event.date} content={event.content} key={event.key} />
+  )
+)
 
-  render() {
-    return (
-      <Widget className="open-voting">
-          <WidgetTitle title={`Open Voting (${this.props.events.length})`} />
-          <WidgetBody>
-          {this.props.events.map((event) => {
-            return (
-              <EventCard date={event.date}
-              content={event.content}
-              key={event.key} />
-            );
-          })}
-          </WidgetBody>
-      </Widget>
-    );
-  }
+const OpenVoting = props => {
+  const daysForVoting = GetsDaysForVoting(props.events.length);
+  const eventCards = DisplayEventCards(props.events);
+
+  return (
+    <Widget className="open-voting">
+        <WidgetTitle title={ daysForVoting } />
+        <WidgetBody>
+          { eventCards }
+        </WidgetBody>
+    </Widget>
+  );
 }
+
+OpenVoting.propTypes = {
+    events: React.PropTypes.array.isRequired,
+};
+
+export default OpenVoting;

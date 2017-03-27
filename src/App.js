@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom';
 
 //Components
@@ -15,6 +13,7 @@ import Login from './Login/Login';
 import MyGroups from './BgGroup/MyGroups/MyGroups';
 import Group from './BgGroup/Group/Group';
 import Games from './Games/Games';
+import Meetup from './BgGroup/Meetup/Meetup';
 
 class App extends Component {
   render() {
@@ -29,6 +28,7 @@ class App extends Component {
           <Route path="/mygroups/" component={MyGroups} />
           <Route path="/games/" component={Games} />
           <Route path="/group/:id" component={Group} />
+          <Route path="/meetup/:id" component={Meetup} />
         </div>
       </Router>
       </div>

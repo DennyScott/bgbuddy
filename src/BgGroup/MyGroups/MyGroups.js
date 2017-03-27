@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import {Link} from 'react-router-dom';
 import {BGTemplate, BGLeftBody, BGRightBody} from '../BGLayout/BGTemplate/BGTemplate';
 import NextEvent from '../Widgets/NextEvent/NextEvent';
 import OpenVoting from '../Widgets/OpenVoting/OpenVoting';
@@ -14,6 +13,23 @@ export default class MyGroups extends Component {
             title: "My Groups",
             image: "http://www.iconsfind.com/wp-content/uploads/2015/08/20150831_55e46b18e2a80.png"
         },
+        groups: [
+          {
+            title: "Pizza Hut Game Group",
+            description: "With supporting text below as a natural lead-in to additional content.",
+            id: 1,
+          },
+          {
+            title: "IQ Metrix Super Board Game Bros",
+            description: "With supporting text below as a natural lead-in to additional content.",
+            id: 2,
+          },
+          {
+            title: "Denny and Travis Game Test Night",
+            description: "With supporting text below as a natural lead-in to additional content.",
+            id: 3,
+          },
+        ],
         nextEvent: {
           date: "January 3, 2017",
           content: "With supporting text below as a natural lead-in to additional content.",
@@ -38,7 +54,7 @@ export default class MyGroups extends Component {
         return (
             <BGTemplate className="myGroups" header={this.data.header}>
                 <BGLeftBody>
-                    <Groups></Groups>
+                    <Groups groups={ this.data.groups }/>
                 </BGLeftBody>
 
                 <BGRightBody>

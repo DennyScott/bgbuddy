@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import {
   Row,
   Col,
-  Card,
-  CardText,
-  Button
 } from 'reactstrap';
 import { Widget, WidgetTitle, WidgetBody } from '../../Widget/Widget';
 import './Events.css';
