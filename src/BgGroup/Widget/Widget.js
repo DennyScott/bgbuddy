@@ -1,44 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Widget.css';
 import { Button } from 'reactstrap';
 
-class Widget extends Component {
-  render() {
-    return (
-      <div className={`${this.props.className} widget`}>
-        {this.props.children}
-      </div>
-    );
-  }
+const Widget = props => (
+  <div className={`${ props.className } widget`}>
+    { props.children }
+  </div>
+);
+
+const DisplayButton = button => {
+   if(button)
+     return(
+       <Button
+         className={`widget-header-button ${button.icon}`}
+         onClick={button.action}>
+         {button.name}
+       </Button>);
 }
 
-class WidgetTitle extends Component {
-  static propTypes = {
-    title: React.PropTypes.string.isRequired,
-    button: React.PropTypes.shape({
-      name: React.PropTypes.string,
-      action: React.PropTypes.func,
-      icon: React.PropTypes.string
-    }),
-  };
-  render() {
-    return (
-      <div className={`${this.props.className} widget-header`}>
-          {this.props.title}
-          {this.props.button? <Button className={`widget-header-button ${this.props.button.icon}`} onClick={this.props.button.action}>{this.props.name}</Button> : null}
-      </div>
-    );
-  }
-}
+const WidgetTitle = props => {
+  const displayButton = DisplayButton(props.button);
 
-class WidgetBody extends Component {
-  render() {
-    return(
-      <div className={`${this.props.className} widget-body`}>
-        {this.props.children}
+    return (
+      <div className={`${props.className} widget-header`}>
+          { props.title }
+          { displayButton }
       </div>
     );
   }
-}
+
+WidgetTitle.propTypes = {
+  title: React.PropTypes.string.isRequired,
+  button: React.PropTypes.shape({
+    name: React.PropTypes.string,
+    action: React.PropTypes.func,
+    icon: React.PropTypes.string
+  })}
+
+
+const WidgetBody = props => (
+      <div className={`${ props.className } widget-body`}>
+        { props.children }
+      </div>
+    );
 
 export {Widget, WidgetTitle, WidgetBody};
