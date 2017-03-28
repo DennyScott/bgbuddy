@@ -37,7 +37,6 @@ WidgetTitle.propTypes = {
     icon: React.PropTypes.string
   })}
 
-
 const WidgetBody = props => (
       <div className={`${ props.className } widget-body`}>
         { props.children }
