@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './LandingPage.css';
 
-import ipadImage from '../img/ipad.png';
-import dogImage from '../img/dog.png';
-import phoneImage from '../img/phones.png';
+
 import SocialButtons from './SocialButtons';
 
-export default class LandingPage extends Component {
-
-  data = {
-    elements: [
-      {
-        title: "Google Web Fonts and Font Awesome Icons",
-        body: "This template features the 'Lato' font, part of the Google Web Font library, as well as icons from Font Awesome.",
-        image: dogImage,
-      },
-      {
-        title: "Google Web Fonts and Font Awesome Icons",
-        body: "This template features the 'Lato' font, part of the Google Web Font library, as well as icons from Font Awesome.",
-        image: ipadImage,
-      },
-      {
-        title: "Google Web Fonts and Font Awesome Icons",
-        body: "This template features the 'Lato' font, part of the Google Web Font library, as well as icons from Font Awesome.",
-        image: phoneImage,
-      }
-    ]
-  }
+class LandingPage extends Component {
 
   render() {
+    const { landingPage } = this.props;
     return (
       <div className="landing-page">
         <div className="intro-header">
@@ -48,7 +28,7 @@ export default class LandingPage extends Component {
           </div>
         </div>
 
-        {this.data.elements.map((element, i) => {
+        {landingPage.elements.map((element, i) => {
           return(
             <LandingElement title={element.title}
             body={element.body}
@@ -122,3 +102,11 @@ class LandingElement extends Component {
     );
   }
 }
+
+const mapStateToProps = state => (
+  {
+    landingPage: state.landingPage,
+  }
+);
+
+export default connect(mapStateToProps)(LandingPage);
