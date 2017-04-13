@@ -1,0 +1,23 @@
+.voting-card {
+  padding: 1.5em 1em 1em;
+  border: 1px solid #d8d8d8;
+  margin: 1rem 0 0;
+}
+
+.voting-card-month {
+  color: #aaa;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.voting-card th {
+  font-size: smaller;
+}
+
+.voting-card td, .voting-card th {
+  text-align: center;
+}
+
+.voting-card .voting-checkbox {
+  margin-left: 0em;
+}
