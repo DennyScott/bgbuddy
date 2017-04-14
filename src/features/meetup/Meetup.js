@@ -19,7 +19,7 @@ class Meetup extends Component {
       <BGTemplate className="Meetup" header={meetup.header}>
         <BGLeftBody>
           <MeetupInfo info={ meetup.meetupInfo } />
-          <ScheduleVote />
+          <ScheduleVote schedule={ meetup.schedule }/>
           <GameVote />
 
         </BGLeftBody>

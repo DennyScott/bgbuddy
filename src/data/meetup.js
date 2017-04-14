@@ -14,6 +14,56 @@ const meetup = {
     content: "With supporting text below as a natural lead-in to additional content.",
     daysUntill: "2",
   },
+  schedule: [
+    {
+      month: "April 2017",
+      days: [
+        {
+          name: "Fri 7",
+          times: [
+            {
+              value: "7pm",
+            },
+            {
+              value: "9pm"
+            }
+          ]
+        },
+        {
+          name: "Sat 8",
+          times: [
+            {
+              value: "7pm"
+            }
+          ]
+        },
+        {
+          name: "Sun 9",
+          times: [
+            {
+              value: "7pm"
+            }
+          ]
+        },
+        {
+          name: "Mon 10",
+          times: [
+            {
+              value: "7pm"
+            }
+          ]
+        },
+        {
+          name: "Tue 11",
+          times: [
+            {
+              value: "7pm"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   openVoting: [
     {
       date: "January 3, 2017",
