@@ -3,24 +3,6 @@ import { Table, Input } from 'reactstrap';
 import { WidgetTitle, WidgetBody, Widget } from '../../../components/widget/Widget';
 import './Vote.css';
 
-const ScheduleVote = props => {
-  return (
-
-    <Widget>
-      <WidgetTitle title="Vote: Select your day" />
-      <WidgetBody>
-        {props.schedule.map( (month, i) => (
-          ScheduleTable(month, i)
-        ))}
-      </WidgetBody>
-    </Widget>
-  )
-}
-
-ScheduleVote.propTypes = {
-  schedule: React.PropTypes.array.isRequired,
-}
-
 const ScheduleTable = (schedule, index) => (
   <div key={index}>
     <span>{schedule.month}</span>
@@ -69,5 +51,25 @@ const ScheduleTable = (schedule, index) => (
     </Table>
   </div>
 )
+
+const ScheduleVote = props => {
+  return (
+
+    <Widget>
+      <WidgetTitle title="Vote: Select your day" />
+      <WidgetBody>
+        {props.schedule.map( (month, i) => (
+          ScheduleTable(month, i)
+        ))}
+      </WidgetBody>
+    </Widget>
+  )
+}
+
+ScheduleVote.propTypes = {
+  schedule: React.PropTypes.array.isRequired,
+}
+
+
 
 export default ScheduleVote;
