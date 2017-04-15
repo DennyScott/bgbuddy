@@ -20,7 +20,7 @@ class Meetup extends Component {
         <BGLeftBody>
           <MeetupInfo info={ meetup.meetupInfo } />
           <ScheduleVote schedule={ meetup.schedule }/>
-          <GameVote />
+          <GameVote games={meetup.games}/>
 
         </BGLeftBody>
 

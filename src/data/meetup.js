@@ -14,6 +14,20 @@ const meetup = {
     content: "With supporting text below as a natural lead-in to additional content.",
     daysUntill: "2",
   },
+  games: [
+    {
+      image: "https://cf.geekdo-images.com/images/pic3163924_md.jpg",
+      name: "Scythe"
+    },
+    {
+      image: "https://cf.geekdo-images.com/images/pic3163924_md.jpg",
+      name: "Twilight Struggle"
+    },
+    {
+      image: "https://cf.geekdo-images.com/images/pic3163924_md.jpg",
+      name: "San Juan"
+    }
+  ],
   schedule: [
     {
       month: "April 2017",
